@@ -3,6 +3,7 @@ package com.company;
 
 import com.company.sorting.InsertionSort;
 import com.company.sorting.MergeSort;
+import com.company.sorting.SelectionSort;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,5 +45,9 @@ public class SortingTest {
         assertArrayEquals(expectedArray, actualArray);
     }
 
-
+    @Test
+    public void selectionSort() {
+        SelectionSort.sort(actualArray);
+        assertArrayEquals(expectedArray, actualArray);
+    }
 }
