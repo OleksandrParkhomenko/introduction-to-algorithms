@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class SortingTest {
 
     private static int[] array;
-    private static final int size = 1000;
+    private static final int size = 10;
     private static final int bound = 10000;
     private int[] expectedArray;
     private int[] actualArray;
@@ -49,5 +49,18 @@ public class SortingTest {
     public void selectionSort() {
         SelectionSort.sort(actualArray);
         assertArrayEquals(expectedArray, actualArray);
+    }
+
+    @Test
+    public void mergeSort() {
+
+        int[] arrayToMerge = {3, 5, 8, 1, 2, 6, 9};
+        int[] expectedMerged = {1, 2, 3, 5, 6, 8, 9};
+        int left = 0, middle = 2, right = 6;
+        MergeSort.merge(arrayToMerge, left, middle, right);
+        assertArrayEquals(expectedMerged, arrayToMerge, "Method merge()");
+
+        MergeSort.sort(actualArray);
+        assertArrayEquals(expectedArray, actualArray, "Sorting");
     }
 }
